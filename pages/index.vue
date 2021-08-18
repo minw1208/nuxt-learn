@@ -28,13 +28,13 @@
 
 import axios from 'axios'
 import SearchInput from '~/components/SearchInput.vue';
-import { fetchProductByKeyword } from '~/api';
+import { fetchProductByKeyword, fetchProducts } from '~/api';
 
 export default {
   components: { SearchInput },
 
   async asyncData() { // pages에서만 사용할 수 있다. component에서는 사용 불가능
-    const res = await axios.get('http://localhost:3000/products')
+    const res = await fetchProducts
     console.log(res);
     const products = res.data.map(item => ({
       ...item,
