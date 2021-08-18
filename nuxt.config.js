@@ -45,5 +45,12 @@ export default {
   //server setup
   server: {
     port: process.env.NODE_ENV === 'development' ? 3001 : null
+  },
+
+  // env setup config
+  env: {
+    baseURL: process.env.NODE_ENV === 'production'
+      ? 'https://my-json-server.typicode.com/minw1208/nuxt-learn-api'
+      : 'http://localhost:3000',
   }
 }
