@@ -34,7 +34,7 @@ export default {
   components: { SearchInput },
 
   async asyncData() { // pages에서만 사용할 수 있다. component에서는 사용 불가능
-    const res = await fetchProducts
+    const res = await fetchProducts()
     console.log(res);
     const products = res.data.map(item => ({
       ...item,
